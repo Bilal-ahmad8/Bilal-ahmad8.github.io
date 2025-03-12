@@ -3,117 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Data Scientist Portfolio</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <title>Your Name - Data Science Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
+    <header class="hero">
         <div class="container">
-            <a href="#home" class="nav-logo">Your Name</a>
-            <ul class="nav-links">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Header Section -->
-    <header id="home">
-        <div class="container">
-            <h1>Hi, I'm Your Name</h1>
-            <p>Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
-            <a href="#projects" class="cta-button">View My Projects</a>
+            <h1>Your Name</h1>
+            <h2>Data Scientist</h2>
+            <nav>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
 
-    <!-- About Me Section -->
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>I'm a data scientist passionate about leveraging data to solve complex problems. With expertise in machine learning, data visualization, and statistical analysis, I aim to drive impactful insights across various domains.</p>
-        </div>
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <img src="your-photo.jpg" alt="Your Name" class="profile-img">
+        <p>Write a brief introduction about yourself and your data science journey.</p>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="project-cards">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <img src="assets/images/project1.jpg" alt="Project 1">
-                    <div class="project-info">
-                        <h3>Predicting House Prices</h3>
-                        <p>Developed a machine learning model to predict house prices based on features like location, size, and amenities.</p>
-                        <a href="https://github.com/yourusername/house-price-prediction" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <img src="assets/images/project2.jpg" alt="Project 2">
-                    <div class="project-info">
-                        <h3>Customer Segmentation</h3>
-                        <p>Utilized clustering algorithms to segment customers based on purchasing behavior, enhancing targeted marketing strategies.</p>
-                        <a href="https://github.com/yourusername/customer-segmentation" target="_blank">View on GitHub</a>
-                    </div>
-                </div>
-                <!-- Add more projects as needed -->
+    <section id="projects" class="container">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="project1-thumbnail.jpg" alt="Project 1">
+                <h3>Predictive Analysis Project</h3>
+                <p>Description of your project and technologies used.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="project2-thumbnail.jpg" alt="Project 2">
+                <h3>Machine Learning Implementation</h3>
+                <p>Description of your project and technologies used.</p>
+                <a href="#" class="btn">View Project</a>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2>Skills</h2>
-            <div class="skills-list">
-                <div class="skill">
-                    <img src="assets/images/python-logo.png" alt="Python">
-                    <p>Python</p>
-                </div>
-                <div class="skill">
-                    <img src="assets/images/r-logo.png" alt="R">
-                    <p>R</p>
-                </div>
-                <div class="skill">
-                    <img src="assets/images/sql-logo.png" alt="SQL">
-                    <p>SQL</p>
-                </div>
-                <div class="skill">
-                    <img src="assets/images/ml-logo.png" alt="Machine Learning">
-                    <p>Machine Learning</p>
-                </div>
-                <!-- Add more skills as needed -->
+    <section id="skills" class="container">
+        <h2>Technical Skills</h2>
+        <div class="skills-container">
+            <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
             </div>
+            <div class="skill-item">
+                <i class="fas fa-chart-line"></i>
+                <h3>Data Analysis</h3>
+            </div>
+            <!-- Add more skills -->
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2>Contact</h2>
-            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
-            <a href="mailto:your.email@example.com" class="cta-button">Contact Me</a>
+    <section id="contact" class="container">
+        <h2>Get in Touch</h2>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+        <div class="social-links">
+            <a href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourprofile"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:youremail@domain.com"><i class="fas fa-envelope"></i></a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Your Name | All Rights Reserved</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/yourname" target="_blank">LinkedIn</a>
-                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-                <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
-                <!-- Add more social links as needed -->
-            </div>
-        </div>
+        <p>&copy; 2023 Your Name. All rights reserved.</p>
     </footer>
-
-    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
