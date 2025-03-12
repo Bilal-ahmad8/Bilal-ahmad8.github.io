@@ -3,47 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Data Science Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Name - Data Scientist Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Welcome to My Data Science Portfolio</h1>
-            <nav>
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+            <h1>Your Name</h1>
+            <p>Data Scientist | Machine Learning Enthusiast | Problem Solver</p>
+            <a href="#projects" class="cta-button">View My Projects</a>
         </div>
     </header>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a data scientist with a passion for machine learning, statistical analysis, and building data-driven solutions. I have worked on various projects ranging from data cleaning and analysis to building predictive models.</p>
-    </section>
-
-    <section id="projects">
-        <h2>My Projects</h2>
-        <div class="projects-container">
-            <div class="project">
-                <img src="assets/project1.png" alt="Project 1">
-                <h3>Project 1: Data Analysis with Python</h3>
-                <p>This project focuses on analyzing a large dataset and deriving insights using Python libraries like pandas, matplotlib, and seaborn.</p>
-            </div>
-            <!-- Add more projects here -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a data scientist with a passion for using data to solve real-world problems. I specialize in machine learning, data visualization, and statistical analysis.</p>
         </div>
     </section>
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach me at <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                <li>Machine Learning (TensorFlow, Keras)</li>
+                <li>Data Visualization (Matplotlib, Seaborn)</li>
+                <li>SQL & NoSQL Databases</li>
+                <li>Data Cleaning & Preprocessing</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project">
+                <h3>Project 1: Predicting House Prices</h3>
+                <p>This project uses machine learning algorithms to predict house prices based on various features such as location, size, and condition.</p>
+                <a href="https://github.com/yourusername/house-price-prediction" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project">
+                <h3>Project 2: Sentiment Analysis</h3>
+                <p>This project involves analyzing the sentiment of customer reviews using natural language processing techniques.</p>
+                <a href="https://github.com/yourusername/sentiment-analysis" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to collaborate or talk about data science, feel free to reach out to me!</p>
+            <a href="mailto:your-email@example.com" class="cta-button">Contact Me</a>
+        </div>
     </section>
 
     <footer>
-        <p>© 2025 My Data Science Portfolio</p>
+        <div class="container">
+            <p>&copy; 2025 Your Name | All Rights Reserved</p>
+        </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
