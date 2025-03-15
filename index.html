@@ -1,70 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Name - Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+        }
+        nav a {
+            color: #fff;
+            padding: 1rem;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        section {
+            padding: 2rem;
+        }
+        .project {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        .project h2 {
+            margin-top: 0;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Your Name</h1>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section id="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>Brief introduction about yourself, your background, and your interests.</p>
-    </div>
-  </section>
-
-  <section id="projects">
-    <div class="container">
-      <h2>Projects</h2>
-      <div class="project-category" id="data-visualization">
-        <h3>Data Visualization</h3>
-        <div class="project-list">
-          <!-- Projects will be dynamically loaded here -->
+    <header>
+        <h1>Your Name</h1>
+        <p>Data Scientist | AI Enthusiast</p>
+    </header>
+    <nav>
+        <a href="#data-science">Data Science</a>
+        <a href="#end-to-end">End-to-End</a>
+        <a href="#ai-projects">AI Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="data-science">
+        <h2>Data Science Projects</h2>
+        <div class="project">
+            <h3>Project 1: Data Analysis</h3>
+            <p>Description of the project...</p>
         </div>
-      </div>
-      <div class="project-category" id="creative-coding">
-        <h3>Creative Coding</h3>
-        <div class="project-list">
-          <!-- Projects will be dynamically loaded here -->
+        <div class="project">
+            <h3>Project 2: Machine Learning</h3>
+            <p>Description of the project...</p>
         </div>
-      </div>
-      <div class="project-category" id="data-science">
-        <h3>Data Science</h3>
-        <div class="project-list">
-          <!-- Projects will be dynamically loaded here -->
+    </section>
+    <section id="end-to-end">
+        <h2>End-to-End Projects</h2>
+        <div class="project">
+            <h3>Project 1: Full Stack Application</h3>
+            <p>Description of the project...</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Email: your.email@example.com</p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile" target="_blank">Your Profile</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Your Name. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="scripts/main.js"></script>
+        <div class="project">
+            <h3>Project 2: Data Pipeline</h3>
+            <p>Description of the project...</p>
+        </div>
+    </section>
+    <section id="ai-projects">
+        <h2>AI Projects</h2>
+        <div class="project">
+            <h3>Project 1: Natural Language Processing</h3>
+            <p>Description of the project...</p>
+        </div>
+        <div class="project">
+            <h3>Project 2: Computer Vision</h3>
+            <p>Description of the project...</p>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Information about yourself...</p>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Contact information...</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
 </body>
 </html>
