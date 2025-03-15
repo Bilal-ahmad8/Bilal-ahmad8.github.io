@@ -51,7 +51,7 @@
         .project-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 1rem; /* Space between the blocks */
+            gap: 2rem; /* Increased space between the blocks */
             justify-items: center; /* Center items horizontally */
         }
 
@@ -81,6 +81,21 @@
             font-size: 1.2rem;
         }
 
+        .show-more-btn {
+            background-color: #3498db; /* Cool blue color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
         footer {
             background-color: #333;
             color: #fff;
@@ -95,6 +110,11 @@
             .project-container {
                 grid-template-columns: 1fr; /* Stack projects in one column on small screens */
             }
+        }
+
+        /* Initially hide extra projects */
+        .extra-projects {
+            display: none;
         }
     </style>
 </head>
@@ -137,58 +157,85 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section id="end-to-end">
-        <h2>End-to-End Projects</h2>
-        <div class="project-container">
+        <!-- Hidden extra projects -->
+        <div class="project-container extra-projects">
             <div class="project">
                 <img src="path-to-image4.jpg" alt="Project 4">
                 <div>
-                    <h3>Project 1: Full Stack Application</h3>
+                    <h3>Project 4: Deep Learning</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
             <div class="project">
                 <img src="path-to-image5.jpg" alt="Project 5">
                 <div>
-                    <h3>Project 2: Data Pipeline</h3>
+                    <h3>Project 5: Data Visualization</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
             <div class="project">
                 <img src="path-to-image6.jpg" alt="Project 6">
                 <div>
-                    <h3>Project 3: Deployment</h3>
+                    <h3>Project 6: Time Series Forecasting</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
         </div>
+        <button class="show-more-btn" onclick="toggleProjects('data-science')">Show More</button>
     </section>
-    <section id="ai-projects">
-        <h2>AI Projects</h2>
+    <section id="end-to-end">
+        <h2>End-to-End Projects</h2>
         <div class="project-container">
             <div class="project">
                 <img src="path-to-image7.jpg" alt="Project 7">
                 <div>
-                    <h3>Project 1: Natural Language Processing</h3>
+                    <h3>Project 1: Full Stack Application</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
             <div class="project">
                 <img src="path-to-image8.jpg" alt="Project 8">
                 <div>
-                    <h3>Project 2: Computer Vision</h3>
+                    <h3>Project 2: Data Pipeline</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
             <div class="project">
                 <img src="path-to-image9.jpg" alt="Project 9">
                 <div>
+                    <h3>Project 3: Deployment</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+        </div>
+        <button class="show-more-btn" onclick="toggleProjects('end-to-end')">Show More</button>
+    </section>
+    <section id="ai-projects">
+        <h2>AI Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="path-to-image10.jpg" alt="Project 10">
+                <div>
+                    <h3>Project 1: Natural Language Processing</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image11.jpg" alt="Project 11">
+                <div>
+                    <h3>Project 2: Computer Vision</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image12.jpg" alt="Project 12">
+                <div>
                     <h3>Project 3: AI Chatbot</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
         </div>
+        <button class="show-more-btn" onclick="toggleProjects('ai-projects')">Show More</button>
     </section>
     <section id="about">
         <h2>About Me</h2>
@@ -201,5 +248,20 @@
     <footer>
         <p>&copy; 2025 Your Name. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleProjects(category) {
+            const extraProjects = document.querySelector(`#${category} .extra-projects`);
+            const button = document.querySelector(`#${category} .show-more-btn`);
+
+            if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
+                extraProjects.style.display = "grid";
+                button.textContent = "Show Less";
+            } else {
+                extraProjects.style.display = "none";
+                button.textContent = "Show More";
+            }
+        }
+    </script>
 </body>
 </html>
