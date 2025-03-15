@@ -16,6 +16,7 @@
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
         }
         nav {
             display: flex;
@@ -30,6 +31,19 @@
         nav a:hover {
             background-color: #555;
         }
+        .top-links {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .top-links a {
+            color: #fff;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+        .top-links a:hover {
+            text-decoration: underline;
+        }
         section {
             padding: 2rem;
         }
@@ -39,8 +53,17 @@
             margin-bottom: 1rem;
             padding: 1rem;
             border-radius: 5px;
+            display: flex;
+            align-items: center;
         }
-        .project h2 {
+        .project img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 1rem;
+        }
+        .project h3 {
             margin-top: 0;
         }
         footer {
@@ -58,45 +81,65 @@
     <header>
         <h1>Your Name</h1>
         <p>Data Scientist | AI Enthusiast</p>
+        <div class="top-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
     </header>
     <nav>
         <a href="#data-science">Data Science</a>
         <a href="#end-to-end">End-to-End</a>
         <a href="#ai-projects">AI Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
     </nav>
     <section id="data-science">
         <h2>Data Science Projects</h2>
         <div class="project">
-            <h3>Project 1: Data Analysis</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image1.jpg" alt="Project 1">
+            <div>
+                <h3>Project 1: Data Analysis</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
         <div class="project">
-            <h3>Project 2: Machine Learning</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image2.jpg" alt="Project 2">
+            <div>
+                <h3>Project 2: Machine Learning</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
     </section>
     <section id="end-to-end">
         <h2>End-to-End Projects</h2>
         <div class="project">
-            <h3>Project 1: Full Stack Application</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image3.jpg" alt="Project 3">
+            <div>
+                <h3>Project 1: Full Stack Application</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
         <div class="project">
-            <h3>Project 2: Data Pipeline</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image4.jpg" alt="Project 4">
+            <div>
+                <h3>Project 2: Data Pipeline</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
     </section>
     <section id="ai-projects">
         <h2>AI Projects</h2>
         <div class="project">
-            <h3>Project 1: Natural Language Processing</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image5.jpg" alt="Project 5">
+            <div>
+                <h3>Project 1: Natural Language Processing</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
         <div class="project">
-            <h3>Project 2: Computer Vision</h3>
-            <p>Description of the project...</p>
+            <img src="path-to-image6.jpg" alt="Project 6">
+            <div>
+                <h3>Project 2: Computer Vision</h3>
+                <p>Description of the project...</p>
+            </div>
         </div>
     </section>
     <section id="about">
