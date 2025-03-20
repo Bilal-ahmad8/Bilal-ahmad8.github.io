@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,7 +13,7 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #333;
+            background-color: #1e5154;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
@@ -21,7 +22,7 @@
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #2a595c;
         }
         nav a {
             color: #fff;
@@ -29,7 +30,7 @@
             text-decoration: none;
         }
         nav a:hover {
-            background-color: #555;
+            background-color: #2a595c;
         }
         .top-links {
             position: absolute;
@@ -51,7 +52,7 @@
         .project-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 2rem; /* Increased space between the blocks */
+            gap: 2rem; /* Consistent gap between projects */
             justify-items: center; /* Center items horizontally */
         }
 
@@ -81,6 +82,19 @@
             font-size: 1.2rem;
         }
 
+        .social-link {
+            font-size: 18px;
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-link i {
+            margin-right: 5px;
+        }
+        .social-link:hover {
+            color: #0073e6; /* Change color on hover */
+        }
+
         .show-more-btn {
             background-color: #3498db; /* Cool blue color */
             color: white;
@@ -97,13 +111,21 @@
         }
 
         footer {
-            background-color: #333;
+            background-color: #2a595c;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
-            position: fixed;
+            position: relative;
             width: 100%;
             bottom: 0;
+        }
+
+        body {
+            margin-bottom: 0; /* Adjust this value depending on the height of your footer */
+        }
+
+        section #contact {
+            padding-bottom: 100px; /* Ensures contact section has space above the footer */
         }
 
         @media (max-width: 768px) {
@@ -115,13 +137,31 @@
         /* Initially hide extra projects */
         .extra-projects {
             display: none;
+            gap: 2rem; /* Same gap as the main container */
+            margin-top: 2rem; /* Vertical gap between containers */
         }
+        .download-cv-btn {
+        display: inline-block;
+        background-color: #3498db; /* Same blue as the "Show More" button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px; /* Space below the "Data Scientist | ML/AI Engineer" text */
+        transition: background-color 0.3s ease;
+    }
+
+    .download-cv-btn:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Data Scientist | AI Enthusiast</p>
+        <h1>Bilal Ahmad</h1>
+        <p>Data Scientist | ML/AI Engineer</p>
+        <a href="path-to-your-cv.pdf" download class="download-cv-btn">Download CV</a>
         <div class="top-links">
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
@@ -138,7 +178,7 @@
             <div class="project">
                 <img src="path-to-image1.jpg" alt="Project 1">
                 <div>
-                    <h3>Project 1: Data Analysis</h3>
+                    <h3>Project 1: Brain Tumor Classification</h3>
                     <p>Description of the project...</p>
                 </div>
             </div>
@@ -239,23 +279,63 @@
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>Information about yourself...</p>
+        <p>Hi, I’m Bilal Ahmad, a Data Scientist and AI Engineer with a passion for turning data into meaningful insights. As a recent graduate, I’m excited to dive into the world of Machine Learning and Artificial Intelligence to solve real-world problems.
+            I’ve honed my skills in Python, data analysis, and building predictive models, and I’m always eager to learn and grow. My goal is to create smart solutions that can drive impactful change in businesses and everyday life.
+            Explore my portfolio, and feel free to reach out if you’re interested in collaborating or have any questions!</p>
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Contact information...</p>
+        <p>Feel free to connect with me through the following platforms:</p>
+
+        <!-- GitHub Link with Icon -->
+        <a href="https://github.com/Bilal-ahmad8" target="_blank" class="social-link">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <!-- LinkedIn Link with Icon -->
+        <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+        <!-- Gmail Link with Icon -->
+        <a href="lt.bilalahmad@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i> Email
+        </a>
     </section>
+
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Bilal Ahmad. All rights reserved.</p>
     </footer>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            checkShowMoreButton('data-science');
+            checkShowMoreButton('end-to-end');
+            checkShowMoreButton('ai-projects');
+        });
+
+        function checkShowMoreButton(category) {
+            const mainProjects = document.querySelector(`#${category} .project-container:not(.extra-projects)`);
+            const extraProjects = document.querySelector(`#${category} .extra-projects`);
+            const showMoreButton = document.querySelector(`#${category} .show-more-btn`);
+
+            // Calculate total projects in both containers
+            const totalProjects = mainProjects.children.length + (extraProjects ? extraProjects.children.length : 0);
+
+            // Show button if total projects exceed 3
+            if (totalProjects > 3) {
+                showMoreButton.style.display = "inline-block";
+            } else {
+                showMoreButton.style.display = "none";
+            }
+        }
+
         function toggleProjects(category) {
             const extraProjects = document.querySelector(`#${category} .extra-projects`);
             const button = document.querySelector(`#${category} .show-more-btn`);
 
             if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
-                extraProjects.style.display = "grid";
+                extraProjects.style.display = "grid"; /* Display as grid to maintain gap */
                 button.textContent = "Show Less";
             } else {
                 extraProjects.style.display = "none";
