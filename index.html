@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portfolio</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <title>Portfolio</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,15 +13,16 @@
             background-color: #f4f4f4;
         }
         header {
-            background-color: #333;
+            background-color: #1e5154;
             color: #fff;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
         }
         nav {
             display: flex;
             justify-content: center;
-            background-color: #444;
+            background-color: #2a595c;
         }
         nav a {
             color: #fff;
@@ -28,87 +30,318 @@
             text-decoration: none;
         }
         nav a:hover {
-            background-color: #555;
+            background-color: #2a595c;
+        }
+        .top-links {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+        .top-links a {
+            color: #fff;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+        .top-links a:hover {
+            text-decoration: underline;
         }
         section {
             padding: 2rem;
         }
+
+        .project-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 2rem; /* Consistent gap between projects */
+            justify-items: center; /* Center items horizontally */
+        }
+
         .project {
             background-color: #fff;
             border: 1px solid #ddd;
-            margin-bottom: 1rem;
             padding: 1rem;
             border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%; /* Full width of the column */
+            max-width: 300px; /* Max width for consistent size */
+            height: 300px; /* Fixed height to make it square */
+            text-align: center; /* Center the text */
         }
-        .project h2 {
-            margin-top: 0;
+
+        .project img {
+            width: 100%;
+            height: 150px; /* Fixed height for the image */
+            object-fit: cover;
+            border-radius: 5px;
         }
+
+        .project h3 {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .social-link {
+            font-size: 18px;
+            margin-right: 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        .social-link i {
+            margin-right: 5px;
+        }
+        .social-link:hover {
+            color: #0073e6; /* Change color on hover */
+        }
+
+        .show-more-btn {
+            background-color: #3498db; /* Cool blue color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background-color: #2980b9; /* Darker blue on hover */
+        }
+
         footer {
-            background-color: #333;
+            background-color: #2a595c;
             color: #fff;
             text-align: center;
             padding: 1rem 0;
-            position: fixed;
+            position: relative;
             width: 100%;
             bottom: 0;
         }
+
+        body {
+            margin-bottom: 0; /* Adjust this value depending on the height of your footer */
+        }
+
+        section #contact {
+            padding-bottom: 100px; /* Ensures contact section has space above the footer */
+        }
+
+        @media (max-width: 768px) {
+            .project-container {
+                grid-template-columns: 1fr; /* Stack projects in one column on small screens */
+            }
+        }
+
+        /* Initially hide extra projects */
+        .extra-projects {
+            display: none;
+            gap: 2rem; /* Same gap as the main container */
+            margin-top: 2rem; /* Vertical gap between containers */
+        }
+        .download-cv-btn {
+        display: inline-block;
+        background-color: #3498db; /* Same blue as the "Show More" button */
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        margin-top: 10px; /* Space below the "Data Scientist | ML/AI Engineer" text */
+        transition: background-color 0.3s ease;
+    }
+
+    .download-cv-btn:hover {
+        background-color: #2980b9; /* Darker blue on hover */
+    }
     </style>
 </head>
 <body>
     <header>
-        <h1>Your Name</h1>
-        <p>Data Scientist | AI Enthusiast</p>
+        <h1>Bilal Ahmad</h1>
+        <p>Data Scientist | ML/AI Engineer</p>
+        <a href="path-to-your-cv.pdf" download class="download-cv-btn">Download CV</a>
+        <div class="top-links">
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
     </header>
     <nav>
         <a href="#data-science">Data Science</a>
         <a href="#end-to-end">End-to-End</a>
         <a href="#ai-projects">AI Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
     </nav>
     <section id="data-science">
         <h2>Data Science Projects</h2>
-        <div class="project">
-            <h3>Project 1: Data Analysis</h3>
-            <p>Description of the project...</p>
+        <div class="project-container">
+            <div class="project">
+                <img src="pics\image.png" alt="Project 1">
+                <div>
+                    <h3>Project 1: Brain Tumor Classification</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="pics\rubaitul-azad-8T_Hgvaz6xc-unsplash.jpg" alt="Project 2">
+                <div>
+                    <h3>Project 2: Machine Learning</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="pics\pexels-pixabay-209831.jpg" alt="Project 3">
+                <div>
+                    <h3>Project 3: Predictive Modeling</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2: Machine Learning</h3>
-            <p>Description of the project...</p>
+        <!-- Hidden extra projects -->
+        <div class="project-container extra-projects">
+            <div class="project">
+                <img src="pics\pexels-binyaminmellish-106399.jpg" alt="Project 4">
+                <div>
+                    <h3>Project 4: Deep Learning</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image5.jpg" alt="Project 5">
+                <div>
+                    <h3>Project 5: Data Visualization</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image6.jpg" alt="Project 6">
+                <div>
+                    <h3>Project 6: Time Series Forecasting</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
         </div>
+        <button class="show-more-btn" onclick="toggleProjects('data-science')">Show More</button>
     </section>
     <section id="end-to-end">
         <h2>End-to-End Projects</h2>
-        <div class="project">
-            <h3>Project 1: Full Stack Application</h3>
-            <p>Description of the project...</p>
+        <div class="project-container">
+            <div class="project">
+                <img src="path-to-image7.jpg" alt="Project 7">
+                <div>
+                    <h3>Project 1: Full Stack Application</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image8.jpg" alt="Project 8">
+                <div>
+                    <h3>Project 2: Data Pipeline</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image9.jpg" alt="Project 9">
+                <div>
+                    <h3>Project 3: Deployment</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2: Data Pipeline</h3>
-            <p>Description of the project...</p>
-        </div>
+        <button class="show-more-btn" onclick="toggleProjects('end-to-end')">Show More</button>
     </section>
     <section id="ai-projects">
         <h2>AI Projects</h2>
-        <div class="project">
-            <h3>Project 1: Natural Language Processing</h3>
-            <p>Description of the project...</p>
+        <div class="project-container">
+            <div class="project">
+                <img src="path-to-image10.jpg" alt="Project 10">
+                <div>
+                    <h3>Project 1: Natural Language Processing</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image11.jpg" alt="Project 11">
+                <div>
+                    <h3>Project 2: Computer Vision</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
+            <div class="project">
+                <img src="path-to-image12.jpg" alt="Project 12">
+                <div>
+                    <h3>Project 3: AI Chatbot</h3>
+                    <p>Description of the project...</p>
+                </div>
+            </div>
         </div>
-        <div class="project">
-            <h3>Project 2: Computer Vision</h3>
-            <p>Description of the project...</p>
-        </div>
+        <button class="show-more-btn" onclick="toggleProjects('ai-projects')">Show More</button>
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>Information about yourself...</p>
+        <p>Hi, I’m Bilal Ahmad, a Data Scientist and AI Engineer with a passion for turning data into meaningful insights. As a recent graduate, I’m excited to dive into the world of Machine Learning and Artificial Intelligence to solve real-world problems.
+            I’ve honed my skills in Python, data analysis, and building predictive models, and I’m always eager to learn and grow. My goal is to create smart solutions that can drive impactful change in businesses and everyday life.
+            Explore my portfolio, and feel free to reach out if you’re interested in collaborating or have any questions!</p>
     </section>
     <section id="contact">
         <h2>Contact</h2>
-        <p>Contact information...</p>
+        <p>Feel free to connect with me through the following platforms:</p>
+
+        <!-- GitHub Link with Icon -->
+        <a href="https://github.com/Bilal-ahmad8" target="_blank" class="social-link">
+            <i class="fab fa-github"></i> GitHub
+        </a>
+
+        <!-- LinkedIn Link with Icon -->
+        <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank" class="social-link">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </a>
+
+        <!-- Gmail Link with Icon -->
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lt.bilalahmad@gmail.com" class="social-link">
+            <i class="fas fa-envelope"></i> Email
+        </a>
     </section>
+
     <footer>
-        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>&copy; 2025 Bilal Ahmad. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            checkShowMoreButton('data-science');
+            checkShowMoreButton('end-to-end');
+            checkShowMoreButton('ai-projects');
+        });
+
+        function checkShowMoreButton(category) {
+            const mainProjects = document.querySelector(`#${category} .project-container:not(.extra-projects)`);
+            const extraProjects = document.querySelector(`#${category} .extra-projects`);
+            const showMoreButton = document.querySelector(`#${category} .show-more-btn`);
+
+            // Calculate total projects in both containers
+            const totalProjects = mainProjects.children.length + (extraProjects ? extraProjects.children.length : 0);
+
+            // Show button if total projects exceed 3
+            if (totalProjects > 3) {
+                showMoreButton.style.display = "inline-block";
+            } else {
+                showMoreButton.style.display = "none";
+            }
+        }
+
+        function toggleProjects(category) {
+            const extraProjects = document.querySelector(`#${category} .extra-projects`);
+            const button = document.querySelector(`#${category} .show-more-btn`);
+
+            if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
+                extraProjects.style.display = "grid"; /* Display as grid to maintain gap */
+                button.textContent = "Show Less";
+            } else {
+                extraProjects.style.display = "none";
+                button.textContent = "Show More";
+            }
+        }
+    </script>
 </body>
 </html>
