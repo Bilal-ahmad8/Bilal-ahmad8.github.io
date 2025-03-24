@@ -59,7 +59,7 @@
         .project {
             background-color: #fff;
             border: 1px solid #ddd;
-            padding: 1rem;
+            padding: 2rem;
             border-radius: 5px;
             display: flex;
             flex-direction: column;
@@ -155,6 +155,177 @@
     .download-cv-btn:hover {
         background-color: #2980b9; /* Darker blue on hover */
     }
+    .project p {
+        max-height: 120px;
+        overflow-y: auto;
+    }
+    .skills-section {
+    padding: 60px 20px;
+    background: #f8f9fa;
+    text-align: center;
+    }
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+        justify-content: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .skill-category {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 280px;
+        text-align: left;
+        transition: transform 0.3s ease;
+    }
+
+    .skill-category:hover {
+        transform: translateY(-5px);
+    }
+
+    .skill-header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+    }
+
+    .skill-header i {
+        font-size: 1.5rem;
+        color: #3498db;
+    }
+
+    .skill-category h3 {
+        margin: 0;
+        color: #2c3e50;
+        font-size: 1.2rem;
+    }
+
+    .skill-category ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+
+    .skill-category li {
+        padding: 8px 0;
+        position: relative;
+        padding-left: 20px;
+    }
+
+    .skill-category li:before {
+        content: "•";
+        color: #3498db;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+     
+     /* Add these to your existing CSS */
+    .compact-category {
+        width: 180px;  /* Reduced width */
+        height: fit-content;
+    }
+
+    .compact-items {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .compact-items span {
+        background: #f0f8ff;
+        padding: 6px 12px;
+        border-radius: 15px;
+        font-size: 0.9rem;
+        display: inline-block;
+    }
+
+    /* Adjust header for compact version */
+    .compact-category .skill-header {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+    .about-section {
+    text-align: center;  /* Centers text content */
+    max-width: 800px;   /* Optional: limits width for better readability */
+    margin: 0 auto;     /* Centers the section horizontally */
+    padding: 40px 20px; /* Adds spacing around */
+    }
+
+    /* If you want to center the heading specifically */
+    .about-section h2 {
+        margin-bottom: 20px; /* Adds space below heading */
+        position: relative;  /* For optional decorative elements */
+    }
+
+    /* Optional: Add a decorative line under the heading */
+    .about-section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #3498db;
+        margin: 15px auto 0;
+    }
+    .contact-section {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    }
+
+    .contact-section h2 {
+        margin-bottom: 30px; /* More space below heading for contact form */
+        position: relative;
+    }
+
+    /* Optional decorative element (matches about section style) */
+    .contact-section h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 3px;
+        background: #3498db;
+        margin: 15px auto 0;
+    }
+
+    /* Additional styles for contact form elements */
+    .contact-section form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .contact-section input,
+    .contact-section textarea {
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    .contact-section button {
+        background: #3498db;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .contact-section button:hover {
+        background: #2980b9;
+    }
     </style>
 </head>
 <body>
@@ -163,7 +334,8 @@
         <p>Data Scientist | ML/AI Engineer</p>
         <a href="path-to-your-cv.pdf" download class="download-cv-btn">Download CV</a>
         <div class="top-links">
-            <a href="#about">About</a>
+            <a href="#skills">Skills</a> 
+            <a href="#about">About</a>            
             <a href="#contact">Contact</a>
         </div>
     </header>
@@ -176,12 +348,13 @@
         <h2>Data Science Projects</h2>
         <div class="project-container">
             <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/Brain-Tumor-Classification" target="_blank"></a>
+                <a href="https://github.com/Bilal-ahmad8/Brain-Tumor-Classification" target="_blank">
                 <img src="pics\image.png" alt="Project 1">
                 <div>
                     <h3>Brain Tumor Classification</h3>
                     <p style="font-size: small;">This project utilizes machine learning to classify brain tumors from MRI scans. It involves data preprocessing, model training, and performance evaluation, aiming to develop an accurate tumor detection classifier. </p>
                 </div>
+                </a>
             </div>
             <div class="project">
                 <a href="https://github.com/Bilal-ahmad8/Quora-Insincere-Questions-Classification" target="_blank">
@@ -217,7 +390,7 @@
                 <a href="https://github.com/Bilal-ahmad8/Rossman-Store-sales-Predictions" target="_blank">
                 <img src="pics\grocery-store-2619380_1280.jpg" alt="Project 5">
                 <div>
-                    <h3>Rossman-Store-sales-Predictions</h3>
+                    <h3>RossmanStore-sales-Predictions</h3>
                     <p style="font-size: small;">This project utilizes the XGBoost algorithm to forecast daily sales for Rossmann's 1,115 stores over a six-week period. By analyzing historical sales data alongside store-specific features such as promotions, holidays, and store types, the model assists managers in optimizing inventory management and staffing. </p>
                 </div>
             </a>
@@ -242,7 +415,7 @@
                 <img src="pics\security.jpg" alt="Project 7">
                 <div>
                     <h3>Network Security</h3>
-                    <p style="font-size: small;">This end-to-end data science project focuses on classifying network security data to identify potential threats. It involves data preprocessing, feature engineering, model training, and evaluation to develop an effective classification system. The repository includes components such as data schemas, network security modules, templates, and scripts for data handling and validation, aiming to enhance the security infrastructure of network systems. </p>
+                    <p style="font-size: small;">This end-to-end data science project focuses on classifying network security data to identify potential threats. It involves data preprocessing, feature engineering, model training, and evaluation to develop an effective classification system.</p>
                 </div>
             </a>
             </div>
@@ -284,23 +457,97 @@
                     <p></p>
                 </div>
             </div>
-            <div class="project">
-                <img src="pics\soon.png" alt="Project 12">
-                <div>
-                    <h3>Working.....</h3>
-                    <p></p>
-                </div>
-            </div>
-        </div>
         <button class="show-more-btn" onclick="toggleProjects('ai-projects')">Show More</button>
     </section>
-    <section id="about">
+<section id="skills" class="skills-section">
+    <h2>Technical Skills</h2>
+    <div class="skills-container">
+        
+ <!-- Programming - Compact Version -->
+        <div class="skill-category compact-category">
+            <div class="skill-header">
+                <i class="fas fa-code"></i>
+                <h3>Programming</h3>
+            </div>
+            <div class="compact-items">
+                <span>Python</span>
+            </div>
+        </div>
+        
+        <!-- Machine Learning & AI -->
+        <div class="skill-category">
+            <div class="skill-header">
+                <i class="fas fa-brain"></i>
+                <h3>Machine Learning & AI</h3>
+            </div>
+            <ul>
+                <li>Supervised Learning</li>
+                <li>Unsupervised Learning</li>
+                <li>Deep Learning</li>
+                <li>Transformers (GPT, BERT, T5)</li>
+                <li>Generative AI</li>
+                <li>AI Agents</li>
+            </ul>
+        </div>
+        
+        <!-- Frameworks & Libraries -->
+        <div class="skill-category">
+            <div class="skill-header">
+                <i class="fas fa-cubes"></i>
+                <h3>Frameworks/Libraries</h3>
+            </div>
+            <ul>
+                <li>Scikit-learn</li>
+                <li>PyTorch</li>
+                <li>Keras</li>
+                <li>XGBoost</li>
+                <li>LGBoost</li>
+                <li>CATBoost</li>
+                <li>LangChain</li>
+                <li>LangGraph</li>
+                <li>Agno (phidata)</li>
+            </ul>
+        </div>
+        
+        <!-- MLOps -->
+        <div class="skill-category">
+            <div class="skill-header">
+                <i class="fas fa-cogs"></i>
+                <h3>MLOps</h3>
+            </div>
+            <ul>
+                <li>Pipelines</li>
+                <li>Modular programming</li>
+                <li>Git/GitHub</li>
+                <li>DVC</li>
+                <li>MLFlow</li>
+                <li>DagsHub</li>
+            </ul>
+        </div>
+        
+        <!-- Familiar With -->
+        <div class="skill-category">
+            <div class="skill-header">
+                <i class="fas fa-tools"></i>
+                <h3>Familiar With</h3>
+            </div>
+            <ul>
+                <li>AWS</li>
+                <li>Apache Airflow</li>
+                <li>Flask</li>
+                <li>Docker</li>
+                <li>SQL</li>
+            </ul>
+        </div>
+    </div>
+    </section>
+	<section id="about" class="about-section">
         <h2>About Me</h2>
         <p>Hi, I’m Bilal Ahmad, a Data Scientist and AI Engineer with a passion for turning data into meaningful insights. As a recent graduate, I’m excited to dive into the world of Machine Learning and Artificial Intelligence to solve real-world problems.
             I’ve honed my skills in Python, data analysis, and building predictive models, and I’m always eager to learn and grow. My goal is to create smart solutions that can drive impactful change in businesses and everyday life.
             Explore my portfolio, and feel free to reach out if you’re interested in collaborating or have any questions!</p>
     </section>
-    <section id="contact">
+    <section id="contact" class="contact-section">
         <h2>Contact</h2>
         <p>Feel free to connect with me through the following platforms:</p>
 
