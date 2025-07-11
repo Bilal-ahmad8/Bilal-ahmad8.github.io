@@ -1,610 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <title>Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #1e5154;
-            color: #fff;
-            padding: 1rem 0;
-            text-align: center;
-            position: relative;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            background-color: #2a595c;
-        }
-        nav a {
-            color: #fff;
-            padding: 1rem;
-            text-decoration: none;
-        }
-        nav a:hover {
-            background-color: #2a595c;
-        }
-        .top-links {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-        }
-        .top-links a {
-            color: #fff;
-            margin-left: 1rem;
-            text-decoration: none;
-        }
-        .top-links a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 2rem;
-        }
-
-        .project-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columns */
-            gap: 2rem; /* Consistent gap between projects */
-            justify-items: center; /* Center items horizontally */
-        }
-
-        .project {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            padding: 2rem;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 100%; /* Full width of the column */
-            max-width: 300px; /* Max width for consistent size */
-            height: 300px; /* Fixed height to make it square */
-            text-align: center; /* Center the text */
-        }
-
-        .project img {
-            width: 100%;
-            height: 150px; /* Fixed height for the image */
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .project h3 {
-            margin-top: 10px;
-            font-size: 1.2rem;
-        }
-
-        .social-link {
-            font-size: 18px;
-            margin-right: 15px;
-            text-decoration: none;
-            color: #333;
-        }
-        .social-link i {
-            margin-right: 5px;
-        }
-        .social-link:hover {
-            color: #0073e6; /* Change color on hover */
-        }
-
-        .show-more-btn {
-            background-color: #3498db; /* Cool blue color */
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .show-more-btn:hover {
-            background-color: #2980b9; /* Darker blue on hover */
-        }
-
-        footer {
-            background-color: #2a595c;
-            color: #fff;
-            text-align: center;
-            padding: 1rem 0;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-        }
-
-        body {
-            margin-bottom: 0; /* Adjust this value depending on the height of your footer */
-        }
-
-        section #contact {
-            padding-bottom: 100px; /* Ensures contact section has space above the footer */
-        }
-
-        @media (max-width: 768px) {
-            .project-container {
-                grid-template-columns: 1fr; /* Stack projects in one column on small screens */
-            }
-        }
-
-        /* Initially hide extra projects */
-        .extra-projects {
-            display: none;
-            gap: 2rem; /* Same gap as the main container */
-            margin-top: 2rem; /* Vertical gap between containers */
-        }
-        .download-cv-btn {
-        display: inline-block;
-        background-color: #3498db; /* Same blue as the "Show More" button */
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        text-decoration: none;
-        margin-top: 10px; /* Space below the "Data Scientist | ML/AI Engineer" text */
-        transition: background-color 0.3s ease;
-    }
-
-    .download-cv-btn:hover {
-        background-color: #2980b9; /* Darker blue on hover */
-    }
-    .project p {
-        max-height: 120px;
-        overflow-y: auto;
-    }
-    .skills-section {
-    padding: 60px 20px;
-    background: #f8f9fa;
-    text-align: center;
-    }
-
-    .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 25px;
-        justify-content: center;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .skill-category {
-        background: white;
-        padding: 25px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        width: 280px;
-        text-align: left;
-        transition: transform 0.3s ease;
-    }
-
-    .skill-category:hover {
-        transform: translateY(-5px);
-    }
-
-    .skill-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 15px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid #3498db;
-    }
-
-    .skill-header i {
-        font-size: 1.5rem;
-        color: #3498db;
-    }
-
-    .skill-category h3 {
-        margin: 0;
-        color: #2c3e50;
-        font-size: 1.2rem;
-    }
-
-    .skill-category ul {
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-    .skill-category li {
-        padding: 8px 0;
-        position: relative;
-        padding-left: 20px;
-    }
-
-    .skill-category li:before {
-        content: "•";
-        color: #3498db;
-        font-weight: bold;
-        position: absolute;
-        left: 0;
-    }
-     
-     /* Add these to your existing CSS */
-    .compact-category {
-        width: 180px;  /* Reduced width */
-        height: fit-content;
-    }
-
-    .compact-items {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-
-    .compact-items span {
-        background: #f0f8ff;
-        padding: 6px 12px;
-        border-radius: 15px;
-        font-size: 0.9rem;
-        display: inline-block;
-    }
-
-    /* Adjust header for compact version */
-    .compact-category .skill-header {
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-    }
-    .about-section {
-    text-align: center;  /* Centers text content */
-    max-width: 800px;   /* Optional: limits width for better readability */
-    margin: 0 auto;     /* Centers the section horizontally */
-    padding: 40px 20px; /* Adds spacing around */
-    }
-
-    /* If you want to center the heading specifically */
-    .about-section h2 {
-        margin-bottom: 20px; /* Adds space below heading */
-        position: relative;  /* For optional decorative elements */
-    }
-
-    /* Optional: Add a decorative line under the heading */
-    .about-section h2::after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 3px;
-        background: #3498db;
-        margin: 15px auto 0;
-    }
-    .contact-section {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    }
-
-    .contact-section h2 {
-        margin-bottom: 30px; /* More space below heading for contact form */
-        position: relative;
-    }
-
-    /* Optional decorative element (matches about section style) */
-    .contact-section h2::after {
-        content: "";
-        display: block;
-        width: 80px;
-        height: 3px;
-        background: #3498db;
-        margin: 15px auto 0;
-    }
-
-    /* Additional styles for contact form elements */
-    .contact-section form {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-
-    .contact-section input,
-    .contact-section textarea {
-        padding: 12px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-
-    .contact-section button {
-        background: #3498db;
-        color: white;
-        padding: 12px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .contact-section button:hover {
-        background: #2980b9;
-    }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilal Ahmad | Data Scientist & AI Engineer</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Bilal Ahmad</h1>
-        <p>Data Scientist | ML/AI Engineer</p>
-        <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" download class="download-cv-btn">Download CV</a>
-        <div class="top-links">
-            <a href="#skills">Skills</a> 
-            <a href="#about">About</a>            
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
-    <nav>
-        <a href="#data-science">Data Science</a>
-        <a href="#end-to-end">End-to-End</a>
-        <a href="#ai-projects">AI Projects</a>
-    </nav>
-    <section id="data-science">
-        <h2>Data Science Projects</h2>
-        <div class="project-container">
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/Brain-Tumor-Classification" target="_blank">
-                <img src="pics\image.png" alt="Project 1">
-                <div>
-                    <h3>Brain Tumor Classification</h3>
-                    <p style="font-size: small;">This project utilizes machine learning to classify brain tumors from MRI scans. It involves data preprocessing, model training, and performance evaluation, aiming to develop an accurate tumor detection classifier. </p>
-                </div>
-                </a>
-            </div>
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/Quora-Insincere-Questions-Classification" target="_blank">
-                <img src="pics\rubaitul-azad-8T_Hgvaz6xc-unsplash.jpg" alt="Project 2">
-                <div>
-                    <h3>Quora Insincere Questions Classification</h3>
-                    <p style="font-size: small;">This project focuses on identifying and filtering out insincere questions on Quora using machine learning techniques. It involves preprocessing a dataset of Quora questions and model training to maintain decency on platform.  </p>
-                </div>
-            </a>
-            </div>
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/Australia-Rain-Predictions" target="_blank">
-                <img src="pics\pexels-pixabay-209831.jpg" alt="Project 3">
-                <div>
-                    <h3>Australia Rain Predictions</h3>
-                    <p style="font-size: small;">This project employs logistic regression to forecast daily rainfall in Australia, utilizing historical weather data to predict the likelihood of rain. The model achieves an 85% accuracy rate, identifying key weather patterns associated with rainfall.</p>
-                </div>
-            </a>
-            </div>
-        </div>
-        <!-- Hidden extra projects -->
-        <div class="project-container extra-projects">
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank">
-                <img src="pics\pexels-binyaminmellish-106399.jpg" alt="Project 4">
-                <div>
-                    <h3>House Price Predictions</h3>
-                    <p style="font-size: small;">This project employs machine learning techniques to predict house prices based on various features. It includes data preprocessing, model training, and evaluation steps, aiming to build an accurate predictive model using historical housing data. The repository features a Jupyter Notebook detailing the process. </p>
-                </div>
-            </a>
-            </div>
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/Rossman-Store-sales-Predictions" target="_blank">
-                <img src="pics\grocery-store-2619380_1280.jpg" alt="Project 5">
-                <div>
-                    <h3>RossmanStore-sales-Predictions</h3>
-                    <p style="font-size: small;">This project utilizes the XGBoost algorithm to forecast daily sales for Rossmann's 1,115 stores over a six-week period. By analyzing historical sales data alongside store-specific features such as promotions, holidays, and store types, the model assists managers in optimizing inventory management and staffing. </p>
-                </div>
-            </a>
-            </div>
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank">
-                <img src="pics\png.jpg" alt="Project 6">
-                <div>
-                    <h3>Rice MSC Classification</h3>
-                    <p style="font-size: small;">This project classifies rice varieties using machine learning techniques applied to tabular data. The provided Jupyter notebook demonstrates data preprocessing, model training, and evaluation processes to predict rice types based on various features. </p>
-                </div>
-            </a>
-            </div>
-        </div>
-        <button class="show-more-btn" onclick="toggleProjects('data-science')">Show More</button>
-    </section>
-    <section id="end-to-end">
-        <h2>End-to-End Projects</h2>
-        <div class="project-container">
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/networksecurity" target="_blank">
-                <img src="pics\security.jpg" alt="Project 7">
-                <div>
-                    <h3>Network Security</h3>
-                    <p style="font-size: small;">This end-to-end data science project focuses on classifying network security data to identify potential threats. It involves data preprocessing, feature engineering, model training, and evaluation to develop an effective classification system.</p>
-                </div>
-            </a>
-            </div>
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/datascienceproject" target="_blank">
-                <img src="pics\wine.jpg" alt="Project 8">
-                <div>
-                    <h3>Wine Quality Prediction</h3>
-                    <p style="font-size: small;">​This end-to-end data science project enhanced my skills in data processing, machine learning, and project organization. I gained hands-on experience in data ingestion, validation, transformation, and model evaluation, reinforcing theoretical knowledge with practical application. Organizing the project with structured components improved my project management abilities, emphasizing the importance of maintainable codebases. Overall, this project bridged the gap between academic learning and real-world data science applications. </p>
-                </div>
-            </a>
-            </div>
-            <div class="project">
-                <img src="pics\soon.png" alt="Project 9">
-                <div>
-                    <h3>Working....</h3>
-                    <p></p>
-                </div>
-            </div>
-        </div>
-        <button class="show-more-btn" onclick="toggleProjects('end-to-end')">Show More</button>
-    </section>
-    <section id="ai-projects">
-        <h2>AI Projects</h2>
-        <div class="project-container">
-            <div class="project">
-                <a href="https://github.com/Bilal-ahmad8/AgenticRAG" target="_blank">
-                <img src="pics\Exploring-Advanced-RAG-Techniques-for-AI.jpg" alt="Project 10">
-                <div>
-                    <h3>Advance RAG (Agentic)</h3>
-                    <p style="font-size: small;">This project develops an advanced Agentic RAG system that responds to user-initiated queries by retrieving information from various sources, including PDFs, websites, and internet searches. It combines retrieval systems with agent-based decision-making, enabling large language models to access real-time data and enhance response accuracy.</p>
-                </div>
-            </a>
-            </div>
-            <div class="project">               
-                <img src="pics\soon.png" alt="Project 11">
-                <div>
-                    <h3>Working.....</h3>
-                    <p></p>
-                </div>
-            </div>
-        <button class="show-more-btn" onclick="toggleProjects('ai-projects')">Show More</button>
-    </section>
-<section id="skills" class="skills-section">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-        
- <!-- Programming - Compact Version -->
-        <div class="skill-category compact-category">
-            <div class="skill-header">
-                <i class="fas fa-code"></i>
-                <h3>Programming</h3>
-            </div>
-            <div class="compact-items">
-                <span>Python</span>
-            </div>
-        </div>
-        
-        <!-- Machine Learning & AI -->
-        <div class="skill-category">
-            <div class="skill-header">
-                <i class="fas fa-brain"></i>
-                <h3>Machine Learning & AI</h3>
-            </div>
-            <ul>
-                <li>Supervised Learning</li>
-                <li>Unsupervised Learning</li>
-                <li>Deep Learning</li>
-                <li>Transformers (GPT, BERT)</li>
-                <li>Generative AI</li>
-                <li>AI Agents</li>
-            </ul>
-        </div>
-        
-        <!-- Frameworks & Libraries -->
-        <div class="skill-category">
-            <div class="skill-header">
-                <i class="fas fa-cubes"></i>
-                <h3>Frameworks/Libraries</h3>
-            </div>
-            <ul>
-                <li>Scikit-learn</li>
-                <li>PyTorch</li>
-                <li>Keras</li>
-                <li>XGBoost</li>
-                <li>LGBoost</li>
-                <li>CATBoost</li>
-                <li>LangChain</li>
-                <li>Agno (phidata)</li>
-            </ul>
-        </div>
-        
-        <!-- MLOps -->
-        <div class="skill-category">
-            <div class="skill-header">
-                <i class="fas fa-cogs"></i>
-                <h3>MLOps</h3>
-            </div>
-            <ul>
-                <li>Pipelines</li>
-                <li>Modular programming</li>
-                <li>Git/GitHub</li>
-                <li>DVC</li>
-                <li>MLFlow</li>
-                <li>DagsHub</li>
-            </ul>
-        </div>
-        
-        <!-- Familiar With -->
-        <div class="skill-category">
-            <div class="skill-header">
-                <i class="fas fa-tools"></i>
-                <h3>Familiar With</h3>
-            </div>
-            <ul>
-                <li>AWS</li>
-                <li>Apache Airflow</li>
-                <li>Flask</li>
-                <li>Docker</li>
-                <li>SQL</li>
-            </ul>
-        </div>
+  <header class="hero">
+    <div class="container">
+      <h1>Bilal Ahmad</h1>
+      <p>Data Scientist | ML/AI Engineer</p>
+      <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" class="btn">Download CV</a>
     </div>
-    </section>
-	<section id="about" class="about-section">
-        <h2>About Me</h2>
-        <p>Hi, I’m Bilal Ahmad, a Data Scientist and AI Engineer with a passion for turning data into meaningful insights. As a recent graduate, I’m excited to dive into the world of Machine Learning and Artificial Intelligence to solve real-world problems.
-            I’ve honed my skills in Python, data analysis, and building predictive models, and I’m always eager to learn and grow. My goal is to create smart solutions that can drive impactful change in businesses and everyday life.
-            Explore my portfolio, and feel free to reach out if you’re interested in collaborating or have any questions!</p>
-    </section>
-    <section id="contact" class="contact-section">
-        <h2>Contact</h2>
-        <p>Feel free to connect with me through the following platforms:</p>
+  </header>
 
-        <!-- GitHub Link with Icon -->
-        <a href="https://github.com/Bilal-ahmad8" target="_blank" class="social-link">
-            <i class="fab fa-github"></i> GitHub
-        </a>
+  <section class="counters" id="experience">
+    <div class="container">
+      <div class="counter"><h2><span data-target="12">0</span>+</h2><p>Projects Completed</p></div>
+      <div class="counter"><h2><span data-target="2.5">0</span>+ Years</h2><p>Learning & Applying</p></div>
+      <div class="counter"><h2><span data-target="1000">0</span>+</h2><p>Hours in AI/Data Science</p></div>
+    </div>
+  </section>
 
-        <!-- LinkedIn Link with Icon -->
-        <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank" class="social-link">
-            <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
+  <nav class="project-nav">
+    <a href="#key-projects">Key Projects</a>
+    <a href="#data-science">Data Science</a>
+    <a href="#end-to-end">End-to-End</a>
+    <a href="#ai-projects">AI Projects</a>
+  </nav>
 
-        <!-- Gmail Link with Icon -->
-        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=lt.bilalahmad@gmail.com" class="social-link">
-            <i class="fas fa-envelope"></i> Email
-        </a>
-    </section>
+  <section id="key-projects" class="projects">
+    <div class="container">
+      <h2>Key Projects</h2>
+      <div class="project-grid large">
+        <!-- Add key projects here -->
+        <div class="project-card">
+          <div class="image-placeholder"></div>
+          <h3>Project Title</h3>
+          <p>Project description goes here.</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Bilal Ahmad. All rights reserved.</p>
-    </footer>
+  <section id="data-science" class="projects">
+    <div class="container">
+      <h2>Data Science Projects</h2>
+      <div class="project-grid">
+        <!-- Add Data Science projects -->
+      </div>
+    </div>
+  </section>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            checkShowMoreButton('data-science');
-            checkShowMoreButton('end-to-end');
-            checkShowMoreButton('ai-projects');
-        });
+  <section id="end-to-end" class="projects">
+    <div class="container">
+      <h2>End-to-End Projects</h2>
+      <div class="project-grid">
+        <!-- Add End-to-End projects -->
+      </div>
+    </div>
+  </section>
 
-        function checkShowMoreButton(category) {
-            const mainProjects = document.querySelector(`#${category} .project-container:not(.extra-projects)`);
-            const extraProjects = document.querySelector(`#${category} .extra-projects`);
-            const showMoreButton = document.querySelector(`#${category} .show-more-btn`);
+  <section id="ai-projects" class="projects">
+    <div class="container">
+      <h2>AI Projects</h2>
+      <div class="project-grid">
+        <!-- Add AI projects -->
+      </div>
+    </div>
+  </section>
 
-            // Calculate total projects in both containers
-            const totalProjects = mainProjects.children.length + (extraProjects ? extraProjects.children.length : 0);
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <ul class="skill-list">
+        <li>Python</li>
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>Transformers</li>
+        <li>PyTorch</li>
+        <li>Scikit-learn</li>
+        <li>LangChain</li>
+        <li>MLOps Tools (MLFlow, DVC, Docker)</li>
+        <!-- Add more as needed -->
+      </ul>
+    </div>
+  </section>
 
-            // Show button if total projects exceed 3
-            if (totalProjects > 3) {
-                showMoreButton.style.display = "inline-block";
-            } else {
-                showMoreButton.style.display = "none";
-            }
-        }
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I’m Bilal Ahmad, a passionate Data Scientist & AI Engineer. Since Oct 2022, I’ve been learning and building across the data and AI landscape. I love solving real-world problems and continue to explore new challenges in ML/AI.</p>
+    </div>
+  </section>
 
-        function toggleProjects(category) {
-            const extraProjects = document.querySelector(`#${category} .extra-projects`);
-            const button = document.querySelector(`#${category} .show-more-btn`);
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p>Let’s connect!</p>
+      <div class="social-links">
+        <a href="https://github.com/Bilal-ahmad8" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:lt.bilalahmad@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
 
-            if (extraProjects.style.display === "none" || extraProjects.style.display === "") {
-                extraProjects.style.display = "grid"; /* Display as grid to maintain gap */
-                button.textContent = "Show Less";
-            } else {
-                extraProjects.style.display = "none";
-                button.textContent = "Show More";
-            }
-        }
-    </script>
+  <footer>
+    <p>&copy; 2025 Bilal Ahmad. All rights reserved.</p>
+  </footer>
 </body>
 </html>
