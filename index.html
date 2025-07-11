@@ -1,143 +1,539 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilal Ahmad | Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilal Ahmad - Data Scientist & ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #4f46e5, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card {
+            background-color: #1e1b4b;
+            border: 1px solid #312e81;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.2), 0 10px 10px -5px rgba(79, 70, 229, 0.1);
+        }
+        .tag {
+            background-color: #312e81;
+            color: #c7d2fe;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ec4899;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Custom styles for Key Projects */
+        .key-project-card {
+            background-color: #2b266d; /* Slightly different background for emphasis */
+            border: 2px solid #6d28d9; /* More prominent border */
+            transform: scale(1.02); /* Slightly larger initially */
+        }
+        .key-project-card:hover {
+            transform: translateY(-15px) scale(1.05); /* More pronounced hover effect */
+            box-shadow: 0 25px 35px -8px rgba(109, 40, 217, 0.3), 0 12px 12px -6px rgba(109, 40, 217, 0.2);
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>Bilal Ahmad</h1>
-    <p>Data Scientist | ML/AI Engineer</p>
-    <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" class="download-cv-btn" target="_blank">Download CV</a>
-  </header>
+<body class="relative">
 
-  <nav>
-    <a href="#key-projects">Key Projects</a>
-    <a href="#projects">All Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <canvas id="hero-canvas"></canvas>
 
-  <section class="counter-section">
-    <div>
-      <div class="counter">9+</div>
-      <div class="counter-label">Projects Completed</div>
+    <div class="relative z-10">
+        <header class="fixed top-0 left-0 right-0 bg-black/30 backdrop-blur-md z-50">
+            <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold gradient-text">BA</a>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#about" class="nav-link text-slate-300 hover:text-white">About</a>
+                    <a href="#skills" class="nav-link text-slate-300 hover:text-white">Skills</a>
+                    <a href="#projects" class="nav-link text-slate-300 hover:text-white">Projects</a>
+                    <a href="#experience" class="nav-link text-slate-300 hover:text-white">Experience</a>
+                    <a href="#contact" class="nav-link text-slate-300 hover:text-white">Contact</a>
+                </nav>
+                <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" target="_blank" class="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">Download CV</a>
+            </div>
+        </header>
+
+        <section id="home" class="min-h-screen flex items-center justify-center text-center">
+            <div class="container mx-auto px-6">
+                <img src="https://placehold.co/150x150/4f46e5/ffffff?text=BA" alt="Bilal Ahmad" class="w-40 h-40 rounded-full mx-auto mb-6 border-4 border-indigo-500 shadow-lg">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4">
+                    Hi, I'm Bilal Ahmad
+                </h1>
+                <h2 class="text-2xl md:text-4xl font-semibold gradient-text mb-4">
+                    Data Scientist & Machine Learning Engineer
+                </h2>
+                <p class="max-w-3xl mx-auto text-slate-400 text-lg md:text-xl mb-8">
+                    I transform complex data into actionable insights and build intelligent systems that solve real-world problems.
+                </p>
+                <p class="text-indigo-300 text-xl font-medium mb-10">
+                    Bringing 9+ Projects of practical experience to the forefront of AI/ML.
+                </p>
+
+                <div class="mt-10 flex justify-center gap-4">
+                    <a href="#projects" class="px-8 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105">View My Work</a>
+                    <a href="#contact" class="px-8 py-3 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-600 transition-all duration-300 transform hover:scale-105">Get In Touch</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="md:w-1/3">
+                        <img src="https://placehold.co/600x600/1e1b4b/e2e8f0?text=Portrait" alt="About Bilal Ahmad" class="rounded-lg shadow-2xl">
+                    </div>
+                    <div class="md:w-2/3">
+                        <p class="text-slate-300 text-lg mb-4">
+                            Hi, I’m Bilal Ahmad, a passionate Data Scientist and AI Engineer with a knack for uncovering hidden patterns in data and transforming them into meaningful insights. As a recent graduate, I’m excited to dive into the world of Machine Learning and Artificial Intelligence to solve real-world problems.
+                        </p>
+                        <p class="text-slate-300 text-lg mb-4">
+                            I’ve honed my skills in Python, data analysis, and building predictive models. My expertise lies in statistical analysis, machine learning model development, and data visualization. I'm driven by a curiosity to understand the 'why' behind the data and to build solutions that not only perform well but are also interpretable and impactful.
+                        </p>
+                        <p class="text-slate-300 text-lg">
+                            My goal is to create smart solutions that can drive impactful change in businesses and everyday life. When I'm not wrangling data, you can find me exploring the latest research in AI or contributing to open-source projects. Explore my portfolio, and feel free to reach out if you’re interested in collaborating or have any questions!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">Technical Skills</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+
+                    <div class="card p-6 rounded-lg text-center">
+                        <div class="flex items-center justify-center text-indigo-400 mb-4">
+                            <i class="fas fa-code text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Programming</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-lg text-center">
+                        <div class="flex items-center justify-center text-indigo-400 mb-4">
+                            <i class="fas fa-brain text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Machine Learning & AI</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Supervised Learning</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Unsupervised Learning</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Deep Learning</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Transformers (GPT, BERT)</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Generative AI</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">AI Agents</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-lg text-center">
+                        <div class="flex items-center justify-center text-indigo-400 mb-4">
+                            <i class="fas fa-cubes text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Frameworks/Libraries</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Scikit-learn</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">PyTorch</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Keras</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">XGBoost</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">LGBoost</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">CATBoost</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">LangChain</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Agno (phidata)</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-lg text-center">
+                        <div class="flex items-center justify-center text-indigo-400 mb-4">
+                            <i class="fas fa-cogs text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">MLOps</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Pipelines</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Modular programming</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Git/GitHub</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">DVC</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">MLFlow</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">DagsHub</span>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 rounded-lg text-center">
+                        <div class="flex items-center justify-center text-indigo-400 mb-4">
+                            <i class="fas fa-tools text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-4">Familiar With</h3>
+                        <div class="flex flex-wrap justify-center gap-2">
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">AWS</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Apache Airflow</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Flask</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Docker</span>
+                            <span class="tag text-sm font-semibold px-3 py-1 rounded-full">SQL</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">My Projects</h2>
+
+                <h3 class="text-3xl font-bold text-center mb-8 text-white gradient-text">Key Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="card rounded-lg overflow-hidden key-project-card">
+                        <a href="https://github.com/Bilal-ahmad8/AgenticRAG" target="_blank">
+                            <img src="pics/Exploring-Advanced-RAG-Techniques-for-AI.jpg" class="w-full h-48 object-cover" alt="Advance RAG (Agentic)">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Advance RAG (Agentic)</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project develops an advanced Agentic RAG system that responds to user-initiated queries by retrieving information from various sources, including PDFs, websites, and internet searches. It combines retrieval systems with agent-based decision-making, enabling large language models to access real-time data and enhance response accuracy.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">LangChain</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">LLMs</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">AI Agents</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/AgenticRAG" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden key-project-card">
+                        <a href="https://github.com/Bilal-ahmad8/networksecurity" target="_blank">
+                            <img src="pics/security.jpg" class="w-full h-48 object-cover" alt="Network Security">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Network Security Classification</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This end-to-end data science project focuses on classifying network security data to identify potential threats. It involves data preprocessing, feature engineering, model training, and evaluation to develop an effective classification system.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Machine Learning</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Python</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">End-to-End</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/networksecurity" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden key-project-card">
+                        <a href="https://github.com/Bilal-ahmad8/Brain-Tumor-Classification" target="_blank">
+                            <img src="pics/image.png" class="w-full h-48 object-cover" alt="Brain Tumor Classification">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Brain Tumor Classification</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project utilizes machine learning to classify brain tumors from MRI scans. It involves data preprocessing, model training, and performance evaluation, aiming to develop an accurate tumor detection classifier.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Deep Learning</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">CNN</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Medical Imaging</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/Brain-Tumor-Classification" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold text-center mb-8 text-white mt-16">Data Science Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/Quora-Insincere-Questions-Classification" target="_blank">
+                            <img src="pics/rubaitul-azad-8T_Hgvaz6xc-unsplash.jpg" class="w-full h-48 object-cover" alt="Quora Insincere Questions Classification">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Quora Insincere Questions Classification</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project focuses on identifying and filtering out insincere questions on Quora using machine learning techniques. It involves preprocessing a dataset of Quora questions and model training to maintain decency on platform.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">NLP</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Text Classification</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/Quora-Insincere-Questions-Classification" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/Australia-Rain-Predictions" target="_blank">
+                            <img src="pics/pexels-pixabay-209831.jpg" class="w-full h-48 object-cover" alt="Australia Rain Predictions">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Australia Rain Predictions</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project employs logistic regression to forecast daily rainfall in Australia, utilizing historical weather data to predict the likelihood of rain. The model achieves an 85% accuracy rate, identifying key weather patterns associated with rainfall.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Logistic Regression</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Weather Forecasting</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/Australia-Rain-Predictions" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank">
+                            <img src="pics/pexels-binyaminmellish-106399.jpg" class="w-full h-48 object-cover" alt="House Price Predictions">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">House Price Predictions</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project employs machine learning techniques to predict house prices based on various features. It includes data preprocessing, model training, and evaluation steps, aiming to build an accurate predictive model using historical housing data. The repository features a Jupyter Notebook detailing the process.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Regression</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Pandas</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/Rossman-Store-sales-Predictions" target="_blank">
+                            <img src="pics/grocery-store-2619380_1280.jpg" class="w-full h-48 object-cover" alt="Rossman Store Sales Predictions">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Rossman Store Sales Predictions</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project utilizes the XGBoost algorithm to forecast daily sales for Rossmann's 1,115 stores over a six-week period. By analyzing historical sales data alongside store-specific features such as promotions, holidays, and store types, the model assists managers in optimizing inventory management and staffing.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">XGBoost</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Time Series</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/Rossman-Store-sales-Predictions" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank"> <img src="pics/png.jpg" class="w-full h-48 object-cover" alt="Rice MSC Classification">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Rice MSC Classification</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This project classifies rice varieties using machine learning techniques applied to tabular data. The provided Jupyter notebook demonstrates data preprocessing, model training, and evaluation processes to predict rice types based on various features.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Classification</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Tabular Data</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/House-Price-Predictions" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                     <div class="card rounded-lg overflow-hidden">
+                        <img src="pics/soon.png" class="w-full h-48 object-cover" alt="Working on something new">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-white mb-2">Working...</h4>
+                            <p class="text-slate-400 mb-4 text-sm">Stay tuned for an exciting new project in Data Science!</p>
+                            <div class="flex justify-end gap-4 mt-4">
+                                <span class="text-slate-500">Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold text-center mb-8 text-white mt-16">End-to-End Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                   
+                    <div class="card rounded-lg overflow-hidden">
+                        <a href="https://github.com/Bilal-ahmad8/datascienceproject" target="_blank">
+                            <img src="pics/wine.jpg" class="w-full h-48 object-cover" alt="Wine Quality Prediction">
+                            <div class="p-6">
+                                <h4 class="text-2xl font-bold text-white mb-2">Wine Quality Prediction</h4>
+                                <p class="text-slate-400 mb-4 text-sm">This end-to-end data science project enhanced my skills in data processing, machine learning, and project organization. I gained hands-on experience in data ingestion, validation, transformation, and model evaluation, reinforcing theoretical knowledge with practical application. Organizing the project with structured components improved my project management abilities, emphasizing the importance of maintainable codebases. Overall, this project bridged the gap between academic learning and real-world data science applications.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Data Engineering</span>
+                                    <span class="tag text-sm font-semibold px-3 py-1 rounded-full">ML Pipelines</span>
+                                </div>
+                                <div class="flex justify-end gap-4 mt-4">
+                                    <a href="https://github.com/Bilal-ahmad8/datascienceproject" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card rounded-lg overflow-hidden">
+                        <img src="pics/soon.png" class="w-full h-48 object-cover" alt="Working on something new">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-white mb-2">Working...</h4>
+                            <p class="text-slate-400 mb-4 text-sm">Stay tuned for an exciting new End-to-End project!</p>
+                            <div class="flex justify-end gap-4 mt-4">
+                                <span class="text-slate-500">Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="text-3xl font-bold text-center mb-8 text-white mt-16">AI Projects</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card rounded-lg overflow-hidden">
+                        <img src="pics/soon.png" class="w-full h-48 object-cover" alt="Working on something new">
+                        <div class="p-6">
+                            <h4 class="text-2xl font-bold text-white mb-2">Working...</h4>
+                            <p class="text-slate-400 mb-4 text-sm">An innovative AI project is currently under development!</p>
+                            <div class="flex justify-end gap-4 mt-4">
+                                <span class="text-slate-500">Coming Soon</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="experience" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">Work Experience</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative border-l-2 border-indigo-500 pl-10">
+                        <div class="mb-12">
+                            <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-2 mt-1.5"></div>
+                            <p class="text-sm text-indigo-400">Month YYYY - Present</p>
+                            <h3 class="text-2xl font-bold text-white mt-1">Your Role Title (e.g., Data Scientist)</h3>
+                            <p class="text-lg text-slate-300 mb-2">Your Company Name</p>
+                            <p class="text-slate-400">Describe your key responsibilities and achievements in this role. E.g., "Led the development of predictive models, significantly improving business insights and operational efficiency."</p>
+                        </div>
+                        <div class="mb-12">
+                            <div class="absolute w-4 h-4 bg-indigo-500 rounded-full -left-2 mt-1.5"></div>
+                            <p class="text-sm text-indigo-400">Month YYYY - Month YYYY</p>
+                            <h3 class="text-2xl font-bold text-white mt-1">Previous Role Title (e.g., Junior ML Engineer)</h3>
+                            <p class="text-lg text-slate-300 mb-2">Previous Company Name</p>
+                            <p class="text-slate-400">Outline your contributions and skills developed in this position. E.g., "Assisted in data preprocessing and feature engineering for various machine learning projects."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 bg-black/20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-4 text-white">Get In Touch</h2>
+                <p class="text-lg text-slate-400 text-center max-w-2xl mx-auto mb-12">
+                    I'm currently open to new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to connect!
+                </p>
+                <div class="max-w-xl mx-auto mb-8 flex justify-center space-x-6">
+                    <a href="https://github.com/Bilal-ahmad8" target="_blank" class="text-slate-300 hover:text-indigo-400 transition-colors flex items-center text-lg">
+                        <i class="fab fa-github text-2xl mr-2"></i> GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank" class="text-slate-300 hover:text-indigo-400 transition-colors flex items-center text-lg">
+                        <i class="fab fa-linkedin text-2xl mr-2"></i> LinkedIn
+                    </a>
+                    <a href="mailto:lt.bilalahmad@gmail.com" class="text-slate-300 hover:text-indigo-400 transition-colors flex items-center text-lg">
+                        <i class="fas fa-envelope text-2xl mr-2"></i> Email
+                    </a>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <form action="https://formspree.io/f/your_form_id" method="POST" class="space-y-6"> <input type="text" name="name" placeholder="Your Name" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                        <input type="email" name="_replyto" placeholder="Your Email" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white">
+                        <textarea name="message" placeholder="Your Message" rows="5" class="w-full p-4 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"></textarea>
+                        <button type="submit" class="w-full py-4 px-6 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 transition-colors">Send Message</button>
+                    </form>
+                    <p class="text-center text-slate-500 text-sm mt-4">This form uses Formspree.io for submissions. Remember to replace 'your_form_id' in the form's action attribute.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-gray-900 py-8">
+            <div class="container mx-auto px-6 text-center text-slate-400">
+                <div class="flex justify-center space-x-6 mb-4">
+                    <a href="https://github.com/Bilal-ahmad8" target="_blank" class="hover:text-white">GitHub</a>
+                    <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank" class="hover:text-white">LinkedIn</a>
+                    </div>
+                <p>&copy; 2025 Bilal Ahmad. All Rights Reserved.</p>
+            </div>
+        </footer>
     </div>
-    <div>
-      <div class="counter">2.5+</div>
-      <div class="counter-label">Years Learning/Building</div>
-    </div>
-  </section>
 
-  <section id="key-projects" class="project-section">
-    <h2>Key Projects</h2>
-    <div class="project-container">
-      <div class="project key-project">
-        <img src="pics/placeholder.png" alt="Key Project 1">
-        <h3>Key Project Title 1</h3>
-        <p>Description of key project 1 goes here.</p>
-      </div>
-      <div class="project key-project">
-        <img src="pics/placeholder.png" alt="Key Project 2">
-        <h3>Key Project Title 2</h3>
-        <p>Description of key project 2 goes here.</p>
-      </div>
-    </div>
-  </section>
+    <script>
+        // Three.js background animation
+        let scene, camera, renderer, stars;
 
-  <section id="projects" class="project-section">
-    <h2>All Projects</h2>
+        function init() {
+            const canvas = document.querySelector('#hero-canvas');
+            if (!canvas) {
+                console.error("Hero canvas not found!");
+                return;
+            }
 
-    <h3>Data Science</h3>
-    <div class="project-container">
-      <div class="project">
-        <img src="pics/placeholder.png" alt="Project">
-        <h3>Project Title</h3>
-        <p>Brief description of the project.</p>
-      </div>
-    </div>
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+            camera.position.z = 1;
+            camera.rotation.x = Math.PI / 2;
 
-    <h3>End-to-End</h3>
-    <div class="project-container">
-      <div class="project">
-        <img src="pics/placeholder.png" alt="Project">
-        <h3>Project Title</h3>
-        <p>Brief description of the project.</p>
-      </div>
-    </div>
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                alpha: true
+            });
+            renderer.setSize(window.innerWidth, window.innerHeight);
 
-    <h3>AI Projects</h3>
-    <div class="project-container">
-      <div class="project">
-        <img src="pics/placeholder.png" alt="Project">
-        <h3>Project Title</h3>
-        <p>Brief description of the project.</p>
-      </div>
-    </div>
-  </section>
+            const starGeo = new THREE.BufferGeometry();
+            const starCount = 6000;
+            const positions = new Float32Array(starCount * 3);
+            for(let i=0; i<starCount*3; i++) {
+                positions[i] = (Math.random() - 0.5) * 1000;
+            }
+            starGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-box">
-        <h3><i class="fas fa-code"></i> Programming</h3>
-        <ul>
-          <li>Python</li>
-        </ul>
-      </div>
+            let starMaterial = new THREE.PointsMaterial({
+                color: 0xaaaaaa,
+                size: 0.7
+            });
 
-      <div class="skill-box">
-        <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
-        <ul>
-          <li>Supervised / Unsupervised Learning</li>
-          <li>Deep Learning, Transformers</li>
-          <li>Generative AI, Agents</li>
-        </ul>
-      </div>
+            stars = new THREE.Points(starGeo, starMaterial);
+            scene.add(stars);
 
-      <div class="skill-box">
-        <h3><i class="fas fa-cubes"></i> Libraries</h3>
-        <ul>
-          <li>PyTorch, Keras, Sklearn</li>
-          <li>XGBoost, LightGBM, CatBoost</li>
-          <li>LangChain, Agno</li>
-        </ul>
-      </div>
+            animate();
+        }
 
-      <div class="skill-box">
-        <h3><i class="fas fa-tools"></i> Tools / MLOps</h3>
-        <ul>
-          <li>Git, DVC, MLflow, Airflow</li>
-          <li>Docker, SQL, Flask</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        function animate() {
+            stars.rotation.y += 0.0002;
+            renderer.render(scene, camera);
+            requestAnimationFrame(animate);
+        }
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p style="text-align:center; max-width: 700px; margin: auto">
-      Hi, I'm Bilal Ahmad — a Data Scientist and AI Engineer passionate about creating intelligent systems. Since 2022, I've been exploring, learning, and building in the data space — from analysis to full ML pipelines. I aim to apply my skills to meaningful problems and always stay curious.
-    </p>
-  </section>
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-container">
-      <div class="contact-box">
-        <p><i class="fab fa-github"></i> <a href="https://github.com/Bilal-ahmad8" target="_blank">GitHub</a></p>
-        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank">LinkedIn</a></p>
-        <p><i class="fas fa-envelope"></i> <a href="mailto:lt.bilalahmad@gmail.com">lt.bilalahmad@gmail.com</a></p>
-      </div>
-    </div>
-  </section>
+        window.addEventListener('resize', onWindowResize, false);
 
-  <footer>
-    <p>&copy; 2025 Bilal Ahmad. All rights reserved.</p>
-  </footer>
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
 </body>
 </html>
