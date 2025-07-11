@@ -1,111 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bilal Ahmad | Data Scientist & AI Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
-  <script defer src="script.js"></script>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bilal Ahmad | Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>Bilal Ahmad</h1>
-      <p>Data Scientist | ML/AI Engineer</p>
-      <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" class="btn">Download CV</a>
-    </div>
+  <header>
+    <h1>Bilal Ahmad</h1>
+    <p>Data Scientist | ML/AI Engineer</p>
+    <a href="https://drive.google.com/file/d/1d3imk2v7dhG8zHvhoBH7uZ15xUDTeTIp/view?usp=drive_link" class="download-cv-btn" target="_blank">Download CV</a>
   </header>
 
-  <section class="counters" id="experience">
-    <div class="container">
-      <div class="counter"><h2><span data-target="12">0</span>+</h2><p>Projects Completed</p></div>
-      <div class="counter"><h2><span data-target="2.5">0</span>+ Years</h2><p>Learning & Applying</p></div>
-      <div class="counter"><h2><span data-target="1000">0</span>+</h2><p>Hours in AI/Data Science</p></div>
-    </div>
-  </section>
-
-  <nav class="project-nav">
+  <nav>
     <a href="#key-projects">Key Projects</a>
-    <a href="#data-science">Data Science</a>
-    <a href="#end-to-end">End-to-End</a>
-    <a href="#ai-projects">AI Projects</a>
+    <a href="#projects">All Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
   </nav>
 
-  <section id="key-projects" class="projects">
-    <div class="container">
-      <h2>Key Projects</h2>
-      <div class="project-grid large">
-        <!-- Add key projects here -->
-        <div class="project-card">
-          <div class="image-placeholder"></div>
-          <h3>Project Title</h3>
-          <p>Project description goes here.</p>
-          <a href="#" target="_blank">View Project</a>
-        </div>
+  <section class="counter-section">
+    <div>
+      <div class="counter">9+</div>
+      <div class="counter-label">Projects Completed</div>
+    </div>
+    <div>
+      <div class="counter">2.5+</div>
+      <div class="counter-label">Years Learning/Building</div>
+    </div>
+  </section>
+
+  <section id="key-projects" class="project-section">
+    <h2>Key Projects</h2>
+    <div class="project-container">
+      <div class="project key-project">
+        <img src="pics/placeholder.png" alt="Key Project 1">
+        <h3>Key Project Title 1</h3>
+        <p>Description of key project 1 goes here.</p>
+      </div>
+      <div class="project key-project">
+        <img src="pics/placeholder.png" alt="Key Project 2">
+        <h3>Key Project Title 2</h3>
+        <p>Description of key project 2 goes here.</p>
       </div>
     </div>
   </section>
 
-  <section id="data-science" class="projects">
-    <div class="container">
-      <h2>Data Science Projects</h2>
-      <div class="project-grid">
-        <!-- Add Data Science projects -->
+  <section id="projects" class="project-section">
+    <h2>All Projects</h2>
+
+    <h3>Data Science</h3>
+    <div class="project-container">
+      <div class="project">
+        <img src="pics/placeholder.png" alt="Project">
+        <h3>Project Title</h3>
+        <p>Brief description of the project.</p>
+      </div>
+    </div>
+
+    <h3>End-to-End</h3>
+    <div class="project-container">
+      <div class="project">
+        <img src="pics/placeholder.png" alt="Project">
+        <h3>Project Title</h3>
+        <p>Brief description of the project.</p>
+      </div>
+    </div>
+
+    <h3>AI Projects</h3>
+    <div class="project-container">
+      <div class="project">
+        <img src="pics/placeholder.png" alt="Project">
+        <h3>Project Title</h3>
+        <p>Brief description of the project.</p>
       </div>
     </div>
   </section>
 
-  <section id="end-to-end" class="projects">
-    <div class="container">
-      <h2>End-to-End Projects</h2>
-      <div class="project-grid">
-        <!-- Add End-to-End projects -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-box">
+        <h3><i class="fas fa-code"></i> Programming</h3>
+        <ul>
+          <li>Python</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+        <ul>
+          <li>Supervised / Unsupervised Learning</li>
+          <li>Deep Learning, Transformers</li>
+          <li>Generative AI, Agents</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3><i class="fas fa-cubes"></i> Libraries</h3>
+        <ul>
+          <li>PyTorch, Keras, Sklearn</li>
+          <li>XGBoost, LightGBM, CatBoost</li>
+          <li>LangChain, Agno</li>
+        </ul>
+      </div>
+
+      <div class="skill-box">
+        <h3><i class="fas fa-tools"></i> Tools / MLOps</h3>
+        <ul>
+          <li>Git, DVC, MLflow, Airflow</li>
+          <li>Docker, SQL, Flask</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="ai-projects" class="projects">
-    <div class="container">
-      <h2>AI Projects</h2>
-      <div class="project-grid">
-        <!-- Add AI projects -->
-      </div>
-    </div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p style="text-align:center; max-width: 700px; margin: auto">
+      Hi, I'm Bilal Ahmad — a Data Scientist and AI Engineer passionate about creating intelligent systems. Since 2022, I've been exploring, learning, and building in the data space — from analysis to full ML pipelines. I aim to apply my skills to meaningful problems and always stay curious.
+    </p>
   </section>
 
-  <section id="skills" class="skills">
-    <div class="container">
-      <h2>Skills</h2>
-      <ul class="skill-list">
-        <li>Python</li>
-        <li>Machine Learning</li>
-        <li>Deep Learning</li>
-        <li>Transformers</li>
-        <li>PyTorch</li>
-        <li>Scikit-learn</li>
-        <li>LangChain</li>
-        <li>MLOps Tools (MLFlow, DVC, Docker)</li>
-        <!-- Add more as needed -->
-      </ul>
-    </div>
-  </section>
-
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <p>I’m Bilal Ahmad, a passionate Data Scientist & AI Engineer. Since Oct 2022, I’ve been learning and building across the data and AI landscape. I love solving real-world problems and continue to explore new challenges in ML/AI.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <h2>Contact</h2>
-      <p>Let’s connect!</p>
-      <div class="social-links">
-        <a href="https://github.com/Bilal-ahmad8" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:lt.bilalahmad@gmail.com"><i class="fas fa-envelope"></i></a>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-container">
+      <div class="contact-box">
+        <p><i class="fab fa-github"></i> <a href="https://github.com/Bilal-ahmad8" target="_blank">GitHub</a></p>
+        <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/bilal-ahmad-1a1146262/" target="_blank">LinkedIn</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:lt.bilalahmad@gmail.com">lt.bilalahmad@gmail.com</a></p>
       </div>
     </div>
   </section>
