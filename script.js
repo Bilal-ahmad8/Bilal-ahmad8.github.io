@@ -1,5 +1,6 @@
 // Counter Animation
 function animateCounter(id, endValue, duration = 2000) {
+    
     const counter = document.getElementById(id);
     if (!counter) return;
     let startValue = 0;
