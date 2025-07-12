@@ -69,6 +69,26 @@
             transform: translateY(-15px) scale(1.05); /* More pronounced hover effect */
             box-shadow: 0 25px 35px -8px rgba(109, 40, 217, 0.3), 0 12px 12px -6px rgba(109, 40, 217, 0.2);
         }
+         /* Styles for text truncation and expansion */
+        .key-project-description {
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Limit to 3 lines by default */
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis; /* For single line, but helps conceptually */
+            transition: max-height 0.3s ease-out; /* Smooth transition for expansion */
+        }
+
+        .key-project-description.expanded {
+            -webkit-line-clamp: unset; /* Show full text */
+            overflow: visible;
+            max-height: none; /* Allow it to take full height */
+        }
+
+        .read-more-btn {
+            cursor: pointer;
+            display: none; /* Hidden by default, shown by JS if text is truncated */
+        }
     </style>
 </head>
 <body class="relative">
@@ -224,23 +244,30 @@
                             <img src="anomaly.jpg" class="w-full h-48 object-cover" alt="Advanced Monitoring System">
                             <div class="p-6">
                                 <h4 class="text-2xl font-bold text-white mb-2">Advanced Monitoring System</h4>
-                                <p class="text-slate-400 mb-4 text-sm">This project delivers a production-grade Real-Time CPU Anomaly Detector, moving beyond reactive alerts to predict and visualize subtle performance deviations before they escalate. It showcases a comprehensive understanding of Machine Learning Engineering from data ingestion to scalable deployment.</p>
-                                <p class="text-slate-400 mb-4 text-sm">Key Highlight:</p>
-                                <p class="text-slate-400 mb-4 text-sm">• End-to-End Data Pipeline: Engineered real-time CPU metric ingestion via Prometheus and Windows Exporter for continuous operational insights.</p>
-                                <p class="text-slate-400 mb-4 text-sm">• Deep Learning Core: Developed an LSTM-based Autoencoder in PyTorch for highly accurate, unsupervised anomaly detection in time-series data.</p>
-                                <p class="text-slate-400 mb-4 text-sm">• Production-Ready MLOps: Implemented MLflow for experiment tracking and Optuna for hyperparameter optimization, ensuring reproducible, high-performing models.</p>
-                                <p class="text-slate-400 mb-4 text-sm">• Containerized Deployment: Architected with Docker for seamless, reproducible, and portable deployment across diverse environments.</p>
-                                <p class="text-slate-400 mb-4 text-sm">• Intuitive Visualization: Created dynamic Grafana dashboards for clear, real-time visualization of metrics and anomalies, enabling rapid response.</p>
+                                </a>
+                                <p class="text-slate-400 mb-4 text-sm key-project-description">This project delivers a production-grade Real-Time CPU Anomaly Detector, moving beyond reactive alerts to predict and visualize subtle performance deviations before they escalate. It showcases a comprehensive understanding of Machine Learning Engineering from data ingestion to scalable deployment.
+                                Key Highlights: <br>
+                                
+                                • End-to-End Data Pipeline: Engineered real-time CPU metric ingestion via Prometheus and Windows Exporter for continuous operational insights.
+                                  <br>
+                                • Deep Learning Core: Developed an LSTM-based Autoencoder in PyTorch for highly accurate, unsupervised anomaly detection in time-series data.
+                                <br>
+                                • Production-Ready MLOps: Implemented MLflow for experiment tracking and Optuna for hyperparameter optimization, ensuring reproducible, high-performing models.
+                                <br>
+                                • Containerized Deployment: Architected with Docker for seamless, reproducible, and portable deployment across diverse environments.
+                                <br>
+                                • Intuitive Visualization: Created dynamic Grafana dashboards for clear, real-time visualization of metrics and anomalies, enabling rapid response.</p>
+                                <button class="read-more-btn text-indigo-400 hover:text-indigo-300 text-sm mt-2">Read More</button>
                                 <div class="flex flex-wrap gap-2 mb-4">
                                     <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Real-Time</span>
                                     <span class="tag text-sm font-semibold px-3 py-1 rounded-full">MLOps</span>
                                     <span class="tag text-sm font-semibold px-3 py-1 rounded-full">Data Science</span>
                                 </div>
                                 <div class="flex justify-end gap-4 mt-4">
-                                    <a href="https://github.com/Bilal-ahmad8/AgenticRAG" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
+                                    <a href="https://github.com/Bilal-ahmad8/Advanced-Monitoring-System" target="_blank" class="text-indigo-400 hover:text-indigo-300">GitHub</a>
                                 </div>
                             </div>
-                        </a>
+                        
                     </div>
                     <div class="card rounded-lg overflow-hidden key-project-card">
                         <a href="" target="_blank">
@@ -569,6 +596,7 @@
         window.addEventListener('resize', onWindowResize, false);
 
         document.addEventListener('DOMContentLoaded', init);
+       
 
         // Mailto contact form submission
         document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -586,6 +614,34 @@
             // Optionally clear the form after opening email client
             this.reset();
         });
+         // JavaScript for "Read More" functionality on project descriptions
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.key-project-description').forEach(description => {
+                const button = description.nextElementSibling; // Get the button right after the description
+
+                // Check if the button exists and if the content actually overflows
+                if (button && button.classList.contains('read-more-btn')) {
+                    // Use a slight delay to ensure CSS has rendered and scrollHeight is accurate
+                    setTimeout(() => {
+                        if (description.scrollHeight > description.clientHeight) {
+                            button.style.display = 'block'; // Show the button only if text is truncated
+                        } else {
+                            button.style.display = 'none'; // Hide button if content fits naturally
+                        }
+                    }, 50); // Small delay, adjust if needed
+
+                    button.addEventListener('click', () => {
+                        description.classList.toggle('expanded');
+                        if (description.classList.contains('expanded')) {
+                            button.textContent = 'Show Less';
+                        } else {
+                            button.textContent = 'Read More';
+                        }
+                    });
+                }
+            });
+        });
+        
     </script>
 </body>
 </html>
